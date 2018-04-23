@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_lesson01:
-                startActivity(Lesson01Activity.class);
+                startActivity(PaintTestActivity.class);
                 break;
         }
     }

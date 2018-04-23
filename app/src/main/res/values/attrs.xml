@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="PaintTest01">
+    <declare-styleable name="PaintStyleTestView">
         <attr name="paint_style" format="enum">
             <enum name="Style_Full" value="1"/>
             <enum name="Style_Full_Stroke" value="2"/>
             <enum name="Style_Stroke" value="3"/>
         </attr>
         <attr name="paint_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="DrawPointView">
+        <attr name="dpv_point_color" format="color"/>
+        <attr name="dpv_point_size" format="dimension"/>
     </declare-styleable>
 </resources>

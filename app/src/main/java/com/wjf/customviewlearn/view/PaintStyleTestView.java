@@ -1,5 +1,6 @@
 package com.wjf.customviewlearn.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -17,27 +18,28 @@ import com.wjf.customviewlearn.R;
  * @email wf_0310@163.com
  * @detail :画笔测试
  */
-public class PaintTest01 extends View {
+public class PaintStyleTestView extends View {
 
     private Paint mPaint;
     private int mWidth;
-    private int mheight;
+    private int mHeight;
     private int mAnInt;
     private int mPaintColor;
 
-    public PaintTest01(Context context) {
+    public PaintStyleTestView(Context context) {
         this(context, null);
     }
 
-    public PaintTest01(Context context, @Nullable AttributeSet attrs) {
+    public PaintStyleTestView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public PaintTest01(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PaintStyleTestView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PaintTest01);
-        mAnInt = typedArray.getInt(R.styleable.PaintTest01_paint_style, 1);
-        mPaintColor=typedArray.getColor(R.styleable.PaintTest01_paint_color,Color.argb(80, 0, 0, 0));
+        @SuppressLint("CustomViewStyleable")
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PaintStyleTestView);
+        mAnInt = typedArray.getInt(R.styleable.PaintStyleTestView_paint_style, 1);
+        mPaintColor = typedArray.getColor(R.styleable.PaintStyleTestView_paint_color, Color.argb(80, 0, 0, 0));
         typedArray.recycle();
         mPaint = initPaint();
     }
@@ -65,7 +67,7 @@ public class PaintTest01 extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mWidth = w;
-        mheight = h;
+        mHeight = h;
     }
 
     @Override
@@ -76,8 +78,7 @@ public class PaintTest01 extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.translate(mWidth / 2, mheight / 2);
-
-        canvas.drawCircle(0, 0, Math.min(mWidth, mheight) / 2, mPaint);
+        canvas.translate(mWidth / 2, mHeight / 2);
+        canvas.drawCircle(0, 0, Math.min(mWidth, mHeight) / 2, mPaint);
     }
 }

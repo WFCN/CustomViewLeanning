@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.wjf.customviewlearn.R;
 import com.wjf.customviewlearn.base.BaseActivity;
 
-public class Lesson01Activity extends BaseActivity {
+public class PaintTestActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

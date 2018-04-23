@@ -1,49 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".ui.activity.Lesson01Activity">
+    android:fillViewport="true"
+    tools:context=".ui.activity.PaintTestActivity">
 
-    <com.wjf.customviewlearn.view.PaintTest01
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        app:paint_color="@color/colorPrimary"
-        app:paint_style="Style_Full_Stroke"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:textColor="@color/color_4b97ff"
-        android:text="填充+描边"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <com.wjf.customviewlearn.view.PaintTest01
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        app:paint_color="@color/colorAccent"
-        app:paint_style="Style_Full"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:textColor="@color/color_4b97ff"
-        android:text="填充"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.wjf.customviewlearn.view.PaintTest01
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        app:paint_color="@color/color_858585"
-        app:paint_style="Style_Stroke"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:textColor="@color/color_4b97ff"
-        android:text="描边"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="画点"
+                android:textColor="@color/color_e53c4b"/>
+
+            <com.wjf.customviewlearn.view.DrawPointView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:dpv_point_color="@color/colorPrimary"
+                app:dpv_point_size="5dp"/>
+        </LinearLayout>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="画线"
+                android:textColor="@color/color_e53c4b"/>
+
+            <com.wjf.customviewlearn.view.DrawLineView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+        </LinearLayout>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PaintStyle区分"
+                android:textColor="@color/color_e53c4b"/>
+
+            <com.wjf.customviewlearn.view.PaintStyleTestView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                app:paint_color="@color/colorPrimary"
+                app:paint_style="Style_Full_Stroke"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="填充+描边"
+                android:textColor="@color/color_4b97ff"/>
+
+            <com.wjf.customviewlearn.view.PaintStyleTestView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                app:paint_color="@color/colorAccent"
+                app:paint_style="Style_Full"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="填充"
+                android:textColor="@color/color_4b97ff"/>
+
+            <com.wjf.customviewlearn.view.PaintStyleTestView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                app:paint_color="@color/color_858585"
+                app:paint_style="Style_Stroke"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="描边"
+                android:textColor="@color/color_4b97ff"/>
+        </LinearLayout>
+
+        <include layout="@layout/horizontal_line"/>
+
+    </LinearLayout>
+
+
+</ScrollView>
