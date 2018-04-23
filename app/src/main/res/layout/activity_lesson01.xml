@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.activity.Lesson01Activity">
+
+    <com.wjf.customviewlearn.view.PaintTest01
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:paint_color="@color/colorPrimary"
+        app:paint_style="Style_Full_Stroke"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_4b97ff"
+        android:text="填充+描边"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.wjf.customviewlearn.view.PaintTest01
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:paint_color="@color/colorAccent"
+        app:paint_style="Style_Full"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_4b97ff"
+        android:text="填充"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.wjf.customviewlearn.view.PaintTest01
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:paint_color="@color/color_858585"
+        app:paint_style="Style_Stroke"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_4b97ff"
+        android:text="描边"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
