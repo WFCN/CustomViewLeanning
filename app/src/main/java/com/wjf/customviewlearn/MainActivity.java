@@ -1,4 +1,4 @@
-package com.wjf.costomviewlearn;
+package com.wjf.customviewlearn;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

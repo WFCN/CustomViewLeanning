@@ -1,4 +1,4 @@
-package com.wjf.costomviewlearn;
+package com.wjf.customviewlearn;
 
 import org.junit.Test;
 

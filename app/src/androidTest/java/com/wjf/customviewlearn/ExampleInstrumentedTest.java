@@ -1,4 +1,4 @@
-package com.wjf.costomviewlearn;
+package com.wjf.customviewlearn;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

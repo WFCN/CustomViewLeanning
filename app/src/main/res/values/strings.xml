@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">CostomViewLearn</string>
+    <string name="app_name">CustomViewLearn</string>
+    <string name="str_lesson01">Lesson01</string>
 </resources>
