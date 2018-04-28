@@ -1,12 +1,11 @@
 package com.wjf.customviewlearn.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -15,44 +14,45 @@ import com.wjf.customviewlearn.R;
 
 /**
  * @author wangfei
- * @datetime 2018-04-28 15:32 GMT+8
+ * @datetime 2018-04-28 16:09 GMT+8
  * @email wf_0310@163.com
  * @detail :
  */
-public class DrawRentView extends View {
+public class DrawRoundRect extends View {
 
     private Paint mPaint;
     private int mWidth;
     private int mHeight;
-    private Rect mRect;
-    private int mColor;
+    private RectF mRect;
+    private float mRX;
+    private float mRY;
 
-    public DrawRentView(Context context) {
-        this(context, null);
+    public DrawRoundRect(Context context) {
+        this(context,null);
     }
 
-    public DrawRentView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, 0);
+    public DrawRoundRect(Context context, @Nullable AttributeSet attrs) {
+        this(context, attrs,0);
     }
 
-    public DrawRentView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DrawRoundRect(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        if (attrs != null) {
-            @SuppressLint("CustomViewStyleable")
-            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawRentView);
-            mColor = typedArray.getColor(R.styleable.DrawRentView_drv_color, Color.BLUE);
+        if (attrs!=null){
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawRoundRect);
+            mRX = typedArray.getDimension(R.styleable.DrawRoundRect_drr_rx, 10);
+            mRY = typedArray.getDimension(R.styleable.DrawRoundRect_drr_ry, 10);
             typedArray.recycle();
-
         }
         initPaint();
     }
 
     private void initPaint() {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(mColor);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(1);
-        mRect = new Rect();
+        mPaint.setStrokeWidth(5);
+        mPaint.setColor(Color.GREEN);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        mRect=new RectF();
     }
 
     @Override
@@ -75,8 +75,7 @@ public class DrawRentView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int stokenWidth = 10;
-        mRect.set(stokenWidth, stokenWidth, (mWidth - stokenWidth), (mHeight - stokenWidth));
-        canvas.drawRect(mRect, mPaint);
+        mRect.set(2.5f, 2.5f,mWidth-2.5f,mHeight-2.5f);
+        canvas.drawRoundRect(mRect,mRX,mRY,mPaint);
     }
 }
