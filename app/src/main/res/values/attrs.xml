@@ -12,4 +12,11 @@
         <attr name="dpv_point_color" format="color"/>
         <attr name="dpv_point_size" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="DrawRentView">
+        <attr name="drv_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="DrawRoundRent">
+        <attr name="drr_rx" format="dimension"/>
+        <attr name="drr_ry" format="dimension"/>
+    </declare-styleable>
 </resources>

@@ -64,6 +64,50 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="画矩形"
+                android:textColor="@color/color_e53c4b"/>
+
+            <com.wjf.customviewlearn.view.DrawRentView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:drv_color="@color/color_49b80a"
+                />
+        </LinearLayout>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="画圆角矩形"
+                android:textColor="@color/color_e53c4b"/>
+
+            <com.wjf.customviewlearn.view.DrawRoundRent
+                android:layout_margin="10dp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                app:drr_rx="10dp"
+                app:drr_ry="10dp"
+                />
+        </LinearLayout>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="PaintStyle区分"
                 android:textColor="@color/color_e53c4b"/>
 
