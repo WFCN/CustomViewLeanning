@@ -46,6 +46,7 @@ public class PaintStyleTestView extends View {
 
     private Paint initPaint() {
         Paint paint = new Paint();
+        paint.setStrokeWidth(10);
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);//设置抗锯齿
         if (1 == mAnInt) {
             paint.setStyle(Paint.Style.FILL);//填充
@@ -79,6 +80,6 @@ public class PaintStyleTestView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.translate(mWidth / 2, mHeight / 2);
-        canvas.drawCircle(0, 0, Math.min(mWidth, mHeight) / 2, mPaint);
+        canvas.drawCircle(0, 0, (float) (Math.min(mWidth, mHeight) / 2*0.8), mPaint);
     }
 }

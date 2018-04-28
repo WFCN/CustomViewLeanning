@@ -112,8 +112,8 @@
                 android:textColor="@color/color_e53c4b"/>
 
             <com.wjf.customviewlearn.view.PaintStyleTestView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 app:paint_color="@color/colorPrimary"
                 app:paint_style="Style_Full_Stroke"
@@ -127,8 +127,8 @@
                 android:textColor="@color/color_4b97ff"/>
 
             <com.wjf.customviewlearn.view.PaintStyleTestView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 app:paint_color="@color/colorAccent"
                 app:paint_style="Style_Full"/>
@@ -141,8 +141,8 @@
                 android:textColor="@color/color_4b97ff"/>
 
             <com.wjf.customviewlearn.view.PaintStyleTestView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 app:paint_color="@color/color_858585"
                 app:paint_style="Style_Stroke"/>
