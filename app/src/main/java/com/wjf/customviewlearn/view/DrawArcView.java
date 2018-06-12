@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,44 +14,39 @@ import com.wjf.customviewlearn.R;
 
 /**
  * @author wangfei
- * @datetime 2018-04-23 17:21 GMT+8
+ * @datetime 2018-06-12 11:25 GMT+8
  * @email wf_0310@163.com
  * @detail :
  */
-public class DrawPointView extends View {
-    public static final int DEFAULT_SIZE = 5;
-
+public class DrawArcView extends View {
+    public static final int M_COLOR = Color.GREEN;
     private Paint mPaint;
-    private float pointSize;
-    private int pointColor;
+    private int mLineColor;
+    private int mShapeColor;
+    private RectF mRectF;
     private int mWidth;
     private int mHeight;
 
-    public DrawPointView(Context context) {
+    public DrawArcView(Context context) {
         this(context, null);
     }
 
-    public DrawPointView(Context context, @Nullable AttributeSet attrs) {
+    public DrawArcView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DrawPointView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DrawArcView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawPointView);
-        pointSize = typedArray.getDimension(R.styleable.DrawPointView_dpv_point_size, DEFAULT_SIZE);
-        pointColor = typedArray.getColor(R.styleable.DrawPointView_dpv_point_color, Color.argb(0x00, 0xff, 0x00, 0x00));
-        typedArray.recycle();
-        initPaint();
-    }
-
-    private void initPaint() {
+        if (attrs != null) {
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawArcView, defStyleAttr, 0);
+            mLineColor = typedArray.getColor(R.styleable.DrawArcView_line_color, M_COLOR);
+            mShapeColor = typedArray.getColor(R.styleable.DrawArcView_shape_color, M_COLOR);
+            typedArray.recycle();
+        }
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(pointColor);
-        mPaint.setStrokeWidth(pointSize);
-        mPaint.setStrokeCap(Paint.Cap.BUTT);
-        //Paint.Cap.ROUND 圆头
-        //Paint.Cap.SQUARE 方头
-        //Paint.Cap.BUTT 平头
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(mLineColor);
+        mRectF = new RectF();
     }
 
     @Override
@@ -63,6 +59,7 @@ public class DrawPointView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         mWidth = w;
         mHeight = h;
+        mRectF.set(0, 0, mWidth, mHeight);
     }
 
     @Override
@@ -73,9 +70,6 @@ public class DrawPointView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.translate(mWidth / 2, mHeight / 2);
-        canvas.drawPoint(0, 0, mPaint);
+        canvas.drawArc(mRectF,0,-120,true,mPaint);
     }
-
-
 }

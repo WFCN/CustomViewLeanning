@@ -20,6 +20,9 @@ import com.wjf.customviewlearn.R;
  */
 public class PaintStyleTestView extends View {
 
+
+
+
     private Paint mPaint;
     private int mWidth;
     private int mHeight;
@@ -28,6 +31,9 @@ public class PaintStyleTestView extends View {
 
     public PaintStyleTestView(Context context) {
         this(context, null);
+        //Paint.Style.STROKE 描边,最终结果是半径+线宽
+        //Paint.Style.FILL 填充,最终结果是半径大小
+        //Paint.Style.FILL_AND_STROKE 填充+描边,最终结果是半径+线宽
     }
 
     public PaintStyleTestView(Context context, @Nullable AttributeSet attrs) {
@@ -80,6 +86,6 @@ public class PaintStyleTestView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.translate(mWidth / 2, mHeight / 2);
-        canvas.drawCircle(0, 0, (float) (Math.min(mWidth, mHeight) / 2*0.8), mPaint);
+        canvas.drawCircle(0, 0, 20, mPaint);
     }
 }

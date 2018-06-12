@@ -19,4 +19,16 @@
         <attr name="drr_rx" format="dimension"/>
         <attr name="drr_ry" format="dimension"/>
     </declare-styleable>
+    <attr name="line_color" format="color"/>
+    <attr name="shape_color" format="color"/>
+    <attr name="shape_width" format="dimension"/>
+    <attr name="shape_height" format="dimension"/>
+
+    <declare-styleable name="DrawOvalView">
+        <attr name="line_color"/>
+    </declare-styleable>
+    <declare-styleable name="DrawArcView">
+        <attr name="line_color"/>
+        <attr name="shape_color"/>
+    </declare-styleable>
 </resources>

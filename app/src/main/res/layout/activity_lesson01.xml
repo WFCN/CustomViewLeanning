@@ -89,9 +89,9 @@
                 android:textColor="@color/color_e53c4b"/>
 
             <com.wjf.customviewlearn.view.DrawRoundRect
-                android:layout_margin="10dp"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
+                android:layout_margin="10dp"
                 app:drr_rx="10dp"
                 app:drr_ry="10dp"
                 />
@@ -112,8 +112,8 @@
                 android:textColor="@color/color_e53c4b"/>
 
             <com.wjf.customviewlearn.view.PaintStyleTestView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="60px"
+                android:layout_height="60px"
                 android:layout_marginTop="10dp"
                 app:paint_color="@color/colorPrimary"
                 app:paint_style="Style_Full_Stroke"
@@ -127,8 +127,8 @@
                 android:textColor="@color/color_4b97ff"/>
 
             <com.wjf.customviewlearn.view.PaintStyleTestView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="60px"
+                android:layout_height="60px"
                 android:layout_marginTop="10dp"
                 app:paint_color="@color/colorAccent"
                 app:paint_style="Style_Full"/>
@@ -141,8 +141,8 @@
                 android:textColor="@color/color_4b97ff"/>
 
             <com.wjf.customviewlearn.view.PaintStyleTestView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="60px"
+                android:layout_height="60px"
                 android:layout_marginTop="10dp"
                 app:paint_color="@color/color_858585"
                 app:paint_style="Style_Stroke"/>
@@ -157,6 +157,32 @@
 
         <include layout="@layout/horizontal_line"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="画椭圆"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.DrawOvalView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <include layout="@layout/horizontal_line"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="画扇形"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.DrawArcView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
 

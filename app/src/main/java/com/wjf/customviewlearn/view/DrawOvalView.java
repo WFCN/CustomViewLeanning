@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,44 +14,38 @@ import com.wjf.customviewlearn.R;
 
 /**
  * @author wangfei
- * @datetime 2018-04-23 17:21 GMT+8
+ * @datetime 2018-06-12 10:59 GMT+8
  * @email wf_0310@163.com
  * @detail :
  */
-public class DrawPointView extends View {
-    public static final int DEFAULT_SIZE = 5;
+public class DrawOvalView extends View {
 
     private Paint mPaint;
-    private float pointSize;
-    private int pointColor;
+    private RectF mRectF;
+    private int mColor = Color.GREEN;
     private int mWidth;
     private int mHeight;
 
-    public DrawPointView(Context context) {
+    public DrawOvalView(Context context) {
         this(context, null);
     }
 
-    public DrawPointView(Context context, @Nullable AttributeSet attrs) {
+    public DrawOvalView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DrawPointView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DrawOvalView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawPointView);
-        pointSize = typedArray.getDimension(R.styleable.DrawPointView_dpv_point_size, DEFAULT_SIZE);
-        pointColor = typedArray.getColor(R.styleable.DrawPointView_dpv_point_color, Color.argb(0x00, 0xff, 0x00, 0x00));
-        typedArray.recycle();
-        initPaint();
-    }
-
-    private void initPaint() {
+        if (attrs != null) {
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawOvalView, defStyleAttr, 0);
+            mColor = typedArray.getColor(R.styleable.DrawOvalView_line_color, Color.GREEN);
+            typedArray.recycle();
+        }
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setColor(pointColor);
-        mPaint.setStrokeWidth(pointSize);
-        mPaint.setStrokeCap(Paint.Cap.BUTT);
-        //Paint.Cap.ROUND 圆头
-        //Paint.Cap.SQUARE 方头
-        //Paint.Cap.BUTT 平头
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(2);
+        mPaint.setColor(mColor);
+        mRectF = new RectF();
     }
 
     @Override
@@ -63,6 +58,7 @@ public class DrawPointView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         mWidth = w;
         mHeight = h;
+        mRectF.set(0, 0, mWidth, mHeight);
     }
 
     @Override
@@ -73,9 +69,6 @@ public class DrawPointView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.translate(mWidth / 2, mHeight / 2);
-        canvas.drawPoint(0, 0, mPaint);
+        canvas.drawOval(mRectF, mPaint);
     }
-
-
 }
