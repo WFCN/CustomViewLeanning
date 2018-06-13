@@ -9,6 +9,7 @@
     tools:context=".ui.activity.PaintTestActivity">
 
     <LinearLayout
+        android:paddingBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -223,6 +224,35 @@
             android:background="@color/color_4b97ff"
             android:layout_width="200dp"
             android:layout_height="100dp"
+            android:layout_marginTop="10dp"/>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="练习项目-条形图"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.BarChartView
+            android:background="@color/color_4b97ff"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"/>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="练习项目-饼状图"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.PieChartView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
 
