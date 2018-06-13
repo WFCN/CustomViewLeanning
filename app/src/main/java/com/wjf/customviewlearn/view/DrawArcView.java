@@ -70,6 +70,12 @@ public class DrawArcView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawArc(mRectF,0,-120,true,mPaint);
+        canvas.drawArc(mRectF, 0, -120, true, mPaint);
+        /**
+         *  RectF 对顶椭圆的范围
+         *  0:表示从哪儿开始
+         *  120:表示到哪儿结束(顺时针为正,逆时针为负)
+         *  true:是否使用弧形两端之外连接圆心的部分
+         */
     }
 }

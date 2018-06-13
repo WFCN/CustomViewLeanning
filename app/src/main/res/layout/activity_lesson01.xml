@@ -183,6 +183,47 @@
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"/>
+
+        <include layout="@layout/horizontal_line"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="画Path"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.DrawPathView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"/>
+        <include layout="@layout/horizontal_line"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="画Bitmap"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.DrawBitmapView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"/>
+        <include layout="@layout/horizontal_line"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="画文字"
+            android:textColor="@color/color_4b97ff"/>
+
+        <com.wjf.customviewlearn.view.DrawTextView
+            android:background="@color/color_4b97ff"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
 
